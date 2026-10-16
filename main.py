@@ -1,4 +1,4 @@
-from grades import SUBJECTS, weighted_total, parse_score, letter_grade
+from grades import SUBJECTS, weighted_total, to_percentage, letter_grade
 
 def choose_subject():
     subjects = list(SUBJECTS)
@@ -18,12 +18,13 @@ def ask_scores(subject):
     for component, weight in SUBJECTS[subject].items():
         while True:
             try:
-                scores[component] = parse_score(input(f"{component} ({weight}%) score: "))
+                raw = input(f"{component} ({weight}%) score: ")
+                maximum = input(f"{component} out of: ")
+                scores[component] = to_percentage(raw, maximum)
                 break
             except ValueError as error:
                 print(error)
     return scores
-
 
 def main():
     subject = choose_subject()

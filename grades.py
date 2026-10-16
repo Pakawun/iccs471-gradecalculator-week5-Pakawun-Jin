@@ -11,14 +11,17 @@ def weighted_total(subject, scores):
     return round(total, 2)
 
 
-def parse_score(text):
+def to_percentage(raw_text, max_text):
     try:
-        score = float(text)
+        raw = float(raw_text)
+        maximum = float(max_text)
     except ValueError:
-        raise ValueError(f"'{text}' is not a number. Enter a number from 0 to 100.")
-    if not 0 <= score <= 100:
-        raise ValueError(f"{text} is out of range. Enter a score from 0 to 100.")
-    return score
+        raise ValueError("Scores must be numbers.")
+    if maximum <= 0:
+        raise ValueError("The maximum score must be greater than 0.")
+    if not 0 <= raw <= maximum:
+        raise ValueError(f"The score must be between 0 and {maximum:g}.")
+    return raw / maximum * 100
 
 
 def letter_grade(total):
@@ -40,12 +43,3 @@ def letter_grade(total):
     if total >= 60:
         return "Grade: D"
     return "Grade: F"
-
-
-# total = weighted_total("ICCS471", {"Assignments": 28, "Midterm": 25, "Final": 35})
-# grade = letter_grade(total)
-# print(grade)
-
-print(weighted_total("ICCS471", {"Assignments": 28, "Midterm": 25, "Final": 33}))
-print(letter_grade(weighted_total("ICCS471", {"Assignments": 28, "Midterm": 25, "Final": 33})))
-print(parse_score("85"))
