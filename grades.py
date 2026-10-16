@@ -10,4 +10,28 @@ def weighted_total(subject, scores):
     total = sum(scores[component] * weight / 100 for component, weight in weights.items())
     return round(total, 2)
 
-# print(weighted_total("ICCS471", {"Assignments": 85, "Midterm": 90, "Final": 80}))  # Example usage
+
+def letter_grade(total):
+
+    print(f"Total Score: {total}")
+
+    if total >= 90:
+        return "Grade: A"
+    if total >= 85:
+        return "Grade: B+"
+    if total >= 80:
+        return "Grade: B"
+    if total >= 75:
+        return "Grade: C+"
+    if total >= 70:
+        return "Grade: C"
+    if total >= 65:
+        return "Grade: D+"
+    if total >= 60:
+        return "Grade: D"
+    return "Grade: F"
+
+
+total = weighted_total("ICCS471", {"Assignments": 28, "Midterm": 25, "Final": 35})
+grade = letter_grade(total)
+print(grade)
