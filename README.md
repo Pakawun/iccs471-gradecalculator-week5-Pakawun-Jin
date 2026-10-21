@@ -29,7 +29,7 @@ A command-line tool for students who want to enter their raw marks for a course 
 
 ## Author and acknowledgements
 - Name / student ID: Pakawun Jindawat 6681453
-- AI tools used: GitHub Copilot
+- AI tools used: GitHub Copilot, Claude Code
 - External code/resources: None
 
 See PLAN.md for the implementation plan and EVIDENCE.md for results and decisions.
