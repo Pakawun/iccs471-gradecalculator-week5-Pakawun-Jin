@@ -18,7 +18,7 @@ Write the first two expectations before implementation. Fill in actual results a
 - Code decision: In `grades.py`, I accepted `letter_grade` using `>=` comparisons from the top grade down, because it matches the "X and above / below X" scale in R3 and C4 confirmed that 89.99 gives B+ and 90 gives A.
 
 ## Automated tests
-- Test file and behaviour checked: `test_grades.py` check the C1 normal case, to `to_percentage` conversion and rejection of scores above the maximum, negative score, a maximum of 0 or less and non-number (C2, C3), all letter-grade bounderies (C4), every subject's weight adding up to 100 (C5) , full marks giving 100, and rounding to two decimals. 
+- Test file and behaviour checked: `test_grades.py` check the C1 normal case, to `to_percentage` conversion and rejection of scores above the maximum, negative score, a maximum of 0 or less and non-number (C2, C3), all letter-grade boundaries (C4), every subject's weight adding up to 100 (C5), full marks giving 100, and rounding to two decimals. 
 - Command I ran: `python3 -m pytest -v`.
 - Final result: 32 collected, 32 passed in 0.02s.
 - Correction and rerun, if needed: None needed. 
@@ -26,5 +26,5 @@ Write the first two expectations before implementation. Fill in actual results a
 ## Realistic use and final judgment
 - Task I tried: Calculated my grade for [Subject] using my actual marks: [component score/max], then calculated the same total by hand.
 - Outcome: The program printed `Weighted total: [xx.xx], Grade: [X]`, which [matched / did not match] my manual calculation of [xx.xx]. It let me enter raw marks directly without converting them.
-- Judgment: Done. All five concrete checks passed, all 32 automated test passed, and realistic use matched a manual calculation. 
-- Remaining limitation or unfinished work: An invalid socre is only reported after the maximumis entered, and the user must re-enter both values. The input handling in `main.py` also has no automated tests.
+- Judgment: Done. All five concrete checks passed, all 32 automated tests passed, and realistic use matched a manual calculation. 
+- Remaining limitation or unfinished work: An invalid score is only reported after the maximum is entered, and the user must re-enter both values. The input handling in `main.py` also has no automated tests.

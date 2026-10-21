@@ -25,21 +25,18 @@ def to_percentage(raw_text, max_text):
 
 
 def letter_grade(total):
-
-    print(f"Total Score: {total}")
-
     if total >= 90:
-        return "Grade: A"
+        return "A"
     if total >= 85:
-        return "Grade: B+"
+        return "B+"
     if total >= 80:
-        return "Grade: B"
+        return "B"
     if total >= 75:
-        return "Grade: C+"
+        return "C+"
     if total >= 70:
-        return "Grade: C"
+        return "C"
     if total >= 65:
-        return "Grade: D+"
+        return "D+"
     if total >= 60:
-        return "Grade: D"
-    return "Grade: F"
+        return "D"
+    return "F"
